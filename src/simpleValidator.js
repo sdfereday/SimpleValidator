@@ -47,6 +47,7 @@ export default (form, options, _errors = [], _hasRun = false) => {
       .filter(x => x);
 
   const consolidateFirstError = field => {
+    _hasRun = true;
     const errors = validateField(field);
 
     const errorsObject = {
