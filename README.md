@@ -1,2 +1,0 @@
-# SimpleValidator
-Created with CodeSandbox

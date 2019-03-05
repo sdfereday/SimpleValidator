@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div id="simplerForm">
+      <h2>Simple Form</h2>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control form-white"
+        data-rule="required"
+        required
+      />
+      <button
+        type="submit"
+        class="btn btn-square btn-primary pull-right submit-simple"
+      >
+        Add
+      </button>
+    </div>
+    <div id="addTourForm">
+      <h2>Complex Form</h2>
+      <div class="form-group">
+        <label for="name">Name: (25 characters alphanumeric)</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control form-white"
+          data-rule="required|isName|isAlphaNumeric"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="city_id">City (valid city):</label>
+        <select
+          id="city_id"
+          class="form-control select2"
+          data-rule="required"
+          required
+        >
+          <option value="" disabled selected>Select your option</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="excerpt">Excerpt (120 characters alphanumeric):</label>
+        <textarea
+          id="excerpt"
+          name="excerpt"
+          class="form-control form-white"
+          rows="2"
+          data-rule="required|isExcerpt|isAlphaNumeric"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="description"
+          >Description (1500 characters alphanumeric):</label
+        >
+        <textarea
+          id="description"
+          name="description"
+          class="summernote"
+          data-rule="required|isDescription|isAlphaNumeric"
+          required
+        ></textarea>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="distance">Distance (miles)(0.0)):</label>
+            <input
+              type="number"
+              id="distance"
+              step="0.1"
+              min="0.0"
+              class="form-control form-white"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="duration"
+              >Duration (hours)(0.00 with 0.25 intervals):</label
+            >
+            <input
+              type="number"
+              id="duration"
+              step="0.25"
+              min="0.0"
+              class="form-control form-white"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-square btn-primary pull-right submit"
+      >
+        Add
+      </button>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
