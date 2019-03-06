@@ -1,11 +1,7 @@
-body {
-  font-family: sans-serif;
-}
-
-[data-type="validator-error"] {
+[data-type='validator-error'] {
   font-size: 11px;
   position: absolute;
-  z-index: 10;
+  z-index: 9999;
   margin-top: 2px;
   color: #ffffff;
   background: rgb(200, 53, 53);
@@ -15,8 +11,8 @@ body {
   pointer-events: none;
 }
 
-[data-type="validator-error"]:before {
-  content: "";
+[data-type='validator-error']:before {
+  content: '';
   width: 0;
   height: 0;
   top: -5px;
