@@ -33,9 +33,10 @@ export const simpleValidator = (
     field.dataset.rule
       .split("|")
       .map(str => {
+        const value = field.contentEditable ? field.innerText : field.value;
         const fn = options.rules[str];
         const message = options.messages[str];
-        const isValid = fn(field.value);
+        const isValid = fn(value);
 
         if (!field.dataset.validateId) {
           field.dataset.validateId = uuidv4();
@@ -104,6 +105,10 @@ export const simpleValidator = (
     validate: () => {
       removeAllTooltips(".error");
       Array.from(fields).forEach(field => consolidateFirstError(field));
+    },
+    checkField: (target, rules) => {
+      target.dataset.rule = rules;
+      consolidateFirstError(target);
     },
     hasErrors: () => _errors.length || !_hasRun,
     getErrors: () => _errors
