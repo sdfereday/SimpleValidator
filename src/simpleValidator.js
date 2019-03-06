@@ -118,3 +118,5 @@ export const simpleValidator = (
     getErrors: () => _errors
   };
 };
+
+export default simpleValidator;
