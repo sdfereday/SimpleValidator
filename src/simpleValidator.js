@@ -33,7 +33,8 @@ export const simpleValidator = (
     field.dataset.rule
       .split("|")
       .map(str => {
-        const value = field.contentEditable ? field.innerText : field.value;
+        const value =
+          field.contentEditable === true ? field.innerText : field.value;
         const fn = options.rules[str];
         const message = options.messages[str];
         const isValid = fn(value);
