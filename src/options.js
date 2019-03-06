@@ -21,9 +21,9 @@ export default {
       return str.length > 0 && str.length < 1501;
     },
     isValidEditor: function(str) {
-			const stripped = str.replace(/(<([^>]+)>)/ig,"");
-			return stripped.length > 0 && stripped.length < 1501;
-		}
+      const stripped = str.replace(/(<([^>]+)>)/ig,"");
+      return stripped.length > 0 && stripped.length < 1501;
+    } 
   },
   messages: {
     // For every rule you can specify an error message, make sure the key is the same as method key so they pair.
