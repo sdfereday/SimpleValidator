@@ -9,7 +9,7 @@ export default {
       return /^[A-Z]$/i.test(str);
     },
     isAlphaNumeric: function(str) {
-      return /^[a-z0-9]+$/i.test(str);
+      return /^[a-z0-9]+$/i.test(str.replace(/\s/g, ''));
     },
     isName: function(str) {
       return str.length > 0 && str.length < 26;
