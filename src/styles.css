@@ -1,7 +1,7 @@
 [data-type='validator-error'] {
   font-size: 11px;
   position: absolute;
-  z-index: 9999;
+  z-index: 1050;
   margin-top: 2px;
   color: #ffffff;
   background: rgb(200, 53, 53);
