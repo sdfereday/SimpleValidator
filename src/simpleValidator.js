@@ -107,8 +107,11 @@ export const simpleValidator = (
       removeAllTooltips(".error");
       Array.from(fields).forEach(field => consolidateFirstError(field));
     },
-    checkField: (target, rules) => {
-      target.dataset.rule = rules;
+    checkField: (target, injectRules) => {
+      if (injectRules) {
+        target.dataset.rule = injectRules;
+      }
+      
       consolidateFirstError(target);
     },
     hasErrors: () => _errors.length || !_hasRun,
