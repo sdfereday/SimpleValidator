@@ -1,7 +1,7 @@
 export default {
-  autoTracking: true, // If enabled will perform validation on current field upon change.
+  autoTracking: true, // If enabled, inputs will validate as they're typed in and changed.
   rules: {
-    // Rules are required here as functions with conditions within.
+    // List rules that map to the data-rule attr on inputs.
     required: function(str) {
       return str.length > 0;
     },
@@ -20,17 +20,19 @@ export default {
     isDescription: function(str) {
       return str.length > 0 && str.length < 1501;
     },
-    requireSelected: function(str) {
-      console.log(str);
-    }
+    isValidEditor: function(str) {
+			const stripped = str.replace(/(<([^>]+)>)/ig,"");
+			return stripped.length > 0 && stripped.length < 1501;
+		}
   },
   messages: {
-    // For every rule you can specify a string, make sure the key name is the same as the methods.
+    // For every rule you can specify an error message, make sure the key is the same as method key so they pair.
     required: "This field is required.",
     isAlpha: "Must be letters only.",
     isAlphaNumeric: "Must be alphanumeric.",
     isName: "Name length must be no longer than 25 characters.",
     isExcerpt: "Excerpt length must be no longer than 120 characters.",
-    isDescription: "Description length must be no longer than 1500 characters."
+    isDescription: "Description length must be no longer than 1500 characters.",
+    isValidEditor: "Editor is required and must be no longer than 1500 characters."
   }
 };
